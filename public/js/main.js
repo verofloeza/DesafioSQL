@@ -56,7 +56,6 @@ socket.on('from-server-mensajes', data => {
 });
 
 function renderMensaje(mensajes) {
-  console.log(mensajes)
   const cuerpoMensajesHTML = mensajes.map( msj =>{
       return `<div class="col-12 cont">
                 <b class="colorBlue">${msj.ME_EMAIL}</b>
@@ -64,7 +63,7 @@ function renderMensaje(mensajes) {
                 <span class="textMessage">${msj.ME_MENSAJE}</span>
               </div>
               <br><br>`;
-  });  
+  }).join("");  
 
   document.querySelector('#historial').innerHTML = cuerpoMensajesHTML;
   document.querySelector('#message').value = "";
